@@ -90,3 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => observer.observe(section));
   }
 });
+
+
+// Me queda pendiente, modificar la velocidad de desplazamiento al hacer clic en los enlaces del menu, para que se vea mas suave

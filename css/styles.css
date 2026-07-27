@@ -301,7 +301,7 @@ h1, h2, h3 {
   font-size: 1.8rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  text-align: left;
+  text-align: justify;
 }
 
 #sobre-mi h3 {
@@ -412,6 +412,160 @@ h1, h2, h3 {
   font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
+}
+
+/* Experiencia en tarjetas */
+.experiencia-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .experiencia-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.experiencia-card {
+  background-color: var(--grisClaro);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.experiencia-card-icono {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 1.5rem;
+  background-color: var(--secundario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.experiencia-card h4 {
+  font-size: 1.7rem;
+  color: var(--secundario);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.experiencia-card-empresa {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--texto);
+  margin-bottom: 1rem;
+}
+
+.experiencia-card-desc {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--texto);
+}
+
+.dark-mode .experiencia-card {
+  background-color: #16213e;
+}
+
+/* Certificaciones */
+.certificaciones {
+  padding: 3rem 0;
+}
+
+.certificaciones-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .certificaciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.certificacion-card {
+  background-color: var(--grisClaro);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificacion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certificacion-badge {
+  width: 5rem;
+  height: 5rem;
+  min-width: 5rem;
+  background-color: var(--primario);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificacion-badge svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--oscuro);
+}
+
+.dark-mode .certificacion-badge svg {
+  stroke: #1a1a2e;
+}
+
+.certificacion-info h4 {
+  font-size: 1.6rem;
+  color: var(--secundario);
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+.certificacion-institucion {
+  font-size: 1.4rem;
+  color: var(--texto);
+  margin-bottom: 0.8rem;
+}
+
+.certificacion-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  color: var(--secundario);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.certificacion-link:hover {
+  color: var(--primario);
+}
+
+.certificacion-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.dark-mode .certificacion-card {
+  background-color: #16213e;
 }
 
 /* Clientes / Testimonios */
