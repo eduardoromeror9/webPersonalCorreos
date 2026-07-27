@@ -3,16 +3,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSubmit = document.getElementById("btn-submit");
   const formMessage = document.getElementById("form-message");
 
+  // --- Dark Mode ---
+  const themeToggle = document.getElementById("theme-toggle");
+  const iconSun = document.getElementById("icon-sun");
+  const iconMoon = document.getElementById("icon-moon");
+
+  function applyTheme(dark) {
+    document.body.classList.toggle("dark-mode", dark);
+    iconSun.style.display = dark ? "none" : "block";
+    iconMoon.style.display = dark ? "block" : "none";
+  }
+
+  // Cargar preferencia guardada
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(savedTheme === "dark" || (!savedTheme && prefersDark));
+
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    iconSun.style.display = isDark ? "none" : "block";
+    iconMoon.style.display = isDark ? "block" : "none";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
+  // --- Formulario contacto ---
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Estado: enviando
     btnSubmit.disabled = true;
     btnSubmit.value = "Enviando...";
     formMessage.textContent = "";
     formMessage.className = "form-message";
 
-    // Recoger datos del formulario
     const formData = {
       nombre: form.nombre.value,
       email: form.email.value,
