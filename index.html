@@ -20,14 +20,14 @@
 
   <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
-      <a href="#">Inicio</a>
-      <a href="#">Sobre Mi</a>
-      <a href="#">Clientes</a>
-      <a href="#">Contacto</a>
+      <a href="#inicio">Inicio</a>
+      <a href="sobre-mi.html">Sobre Mi</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </div>
 
-  <section class="hero">
+  <section id="inicio" class="hero">
     <div class="contenido-hero">
       <h2 class="">"Diseño" y Desarrollo Web <span>Freelancer</span></h2>
 
@@ -42,12 +42,13 @@
         <p>Santiago, Chile</p>
       </div>
 
-      <a class="boton" href="#">Contactar</a>
+      <a class="boton" href="#contacto">Contactar</a>
     </div>
 
   </section>
 
   <main class="contenedor sombra">
+
     <h2>Mis Servicios</h2>
 
     <div class="servicios">
@@ -116,7 +117,37 @@
       </section>
     </div>
 
-    <section>
+    <section id="clientes">
+      <h2>Lo que dicen mis clientes</h2>
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <div class="testimonio-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <p class="testimonio-texto">"Eduardo automatizó procesos que nos tomaban horas. Su capacidad para entender problemas técnicos y entregar soluciones rápidas es excepcional. El proyecto se entregó antes de lo esperado."</p>
+          <p class="testimonio-nombre">Carlos Muñoz</p>
+          <p class="testimonio-empresa">TechStart SpA</p>
+        </div>
+        <div class="testimonio-card">
+          <div class="testimonio-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <p class="testimonio-texto">"Necesitábamos mejorar nuestro sitio web y Eduardo no solo entregó a tiempo, sino que optimizó el rendimiento significativamente. Muy profesional y confiable."</p>
+          <p class="testimonio-nombre">María Fernández</p>
+          <p class="testimonio-empresa">InnovaMarket</p>
+        </div>
+        <div class="testimonio-card">
+          <div class="testimonio-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <p class="testimonio-texto">"Trabajamos juntos en integraciones de sistemas complejas. Su conocimiento en Python y APIs REST hizo la definitiva diferencia en nuestro proyecto."</p>
+          <p class="testimonio-nombre">Andrés Velásquez</p>
+          <p class="testimonio-empresa">DataCore Solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
 
       <h2>Contacto</h2>
 

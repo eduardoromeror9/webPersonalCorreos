@@ -21,7 +21,8 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 .servicios,
@@ -143,7 +144,8 @@ h1, h2, h3 {
   padding: 1rem;
 }
 
-.navegacion-principal a:hover {
+.navegacion-principal a:hover,
+.navegacion-principal a.active {
   background-color: var(--primario);
   color: var(--oscuro);
 }
@@ -283,6 +285,207 @@ h1, h2, h3 {
 
 .dark-mode .input-text::placeholder {
   color: #a0a0b0;
+}
+
+/* Sobre Mí */
+#sobre-mi {
+  padding: 3rem 0;
+  scroll-snap-align: start;
+}
+
+.sobre-mi-contenido {
+  margin-bottom: 3rem;
+}
+
+.sobre-mi-texto {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+#sobre-mi h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--secundario);
+}
+
+/* Habilidades */
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.habilidad-badge {
+  background-color: var(--primario);
+  color: var(--oscuro);
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dark-mode .habilidad-badge {
+  color: #1a1a2e;
+}
+
+/* Experiencia timeline */
+.experiencia-timeline {
+  position: relative;
+  padding-left: 3rem;
+  margin-top: 2rem;
+}
+
+.experiencia-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--secundario);
+  border-radius: 2px;
+}
+
+.experiencia-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.experiencia-punto {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--secundario);
+  border-radius: 50%;
+  border: 3px solid var(--blanco);
+}
+
+.dark-mode .experiencia-punto {
+  border-color: #1a1a2e;
+}
+
+.experiencia-contenido {
+  text-align: left;
+}
+
+.experiencia-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.experiencia-encabezado h4 {
+  font-size: 1.8rem;
+  color: var(--secundario);
+  text-align: left;
+  margin: 0;
+}
+
+.experiencia-fecha {
+  font-size: 1.4rem;
+  color: var(--gris);
+  font-weight: 700;
+}
+
+.experiencia-empresa {
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  color: var(--texto);
+}
+
+.experiencia-contenido ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.experiencia-contenido li {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Clientes / Testimonios */
+#clientes {
+  padding: 3rem 0;
+  scroll-snap-align: start;
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonio-card {
+  background-color: var(--grisClaro);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonio-avatar {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 1.5rem;
+  background-color: var(--secundario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.testimonio-texto {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--texto);
+}
+
+.testimonio-nombre {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--texto);
+}
+
+.testimonio-empresa {
+  font-size: 1.4rem;
+  color: var(--secundario);
+  font-weight: 700;
+}
+
+.dark-mode .testimonio-card {
+  background-color: #16213e;
+}
+
+/* Sección contacto con ID */
+#contacto {
+  scroll-snap-align: start;
 }
 
 .footer {
