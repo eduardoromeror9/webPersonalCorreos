@@ -663,10 +663,6 @@ h1, h2, h3 {
 
 .footer {
   text-align: center;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #ffffff;
-  padding: 2rem;
-  margin-top: 2rem;
 }
 
 /* Botón flotante WhatsApp */

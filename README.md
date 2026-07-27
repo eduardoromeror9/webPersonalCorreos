@@ -56,6 +56,7 @@ Netlify despliega automáticamente al detectar el push.
 - Formulario de contacto con validación y feedback visual
 - Botón flotante de WhatsApp (esquina inferior derecha)
 - Diseño responsive
+- Cambio a modo oscuro
 
 ## Licencia
 
