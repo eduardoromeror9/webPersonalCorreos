@@ -72,6 +72,7 @@ Netlify despliega automáticamente al detectar el push.
 
 ## Arquitectura del Chatbot
 
+- El chatbot utiliza un sistema de matching basado en TF-IDF para encontrar la respuesta más relevante en `knowledge.json`. El flujo de decisión es el siguiente:
 ![Diagrama de flujo de la lógica de respuesta del chatbot](img/arquitectura-Chatbot.svg)
 
 ## Licencia
