@@ -1,8 +1,16 @@
 const path = require('path');
 const fs = require('fs');
 
-const knowledgePath = path.resolve(__dirname, '../../knowledge.json');
-const knowledge = JSON.parse(fs.readFileSync(knowledgePath, 'utf-8'));
+const knowledgePath = path.resolve(__dirname, '..', '..', 'knowledge.json');
+let knowledge;
+
+try {
+  const raw = fs.readFileSync(knowledgePath, 'utf-8');
+  knowledge = JSON.parse(raw);
+} catch (err) {
+  console.error('Failed to load knowledge.json:', err.message);
+  knowledge = [];
+}
 
 function tokenize(text) {
   return text.toLowerCase()
@@ -19,11 +27,14 @@ function termFrequency(tokens) {
   return freq;
 }
 
+let index, idf, docVectors;
+
 function buildIndex() {
-  const index = knowledge.map(entry => {
+  if (index) return;
+
+  index = knowledge.map(entry => {
     const allText = entry.preguntas.join(' ') + ' ' + entry.respuesta;
-    const tokens = tokenize(allText);
-    return { id: entry.id, tokens, text: allText };
+    return { id: entry.id, tokens: tokenize(allText) };
   });
 
   const termDocCount = {};
@@ -33,12 +44,12 @@ function buildIndex() {
   });
 
   const N = index.length;
-  const idf = {};
+  idf = {};
   for (const t in termDocCount) {
     idf[t] = Math.log((N + 1) / (termDocCount[t] + 1)) + 1;
   }
 
-  const docVectors = index.map(doc => {
+  docVectors = index.map(doc => {
     const tf = termFrequency(doc.tokens);
     const vec = {};
     for (const t in tf) {
@@ -46,15 +57,6 @@ function buildIndex() {
     }
     return { id: doc.id, vec };
   });
-
-  return { idf, docVectors, index };
-}
-
-let cachedIndex = null;
-
-function getIndex() {
-  if (!cachedIndex) cachedIndex = buildIndex();
-  return cachedIndex;
 }
 
 function cosineSimilarity(vec1, vec2) {
@@ -72,7 +74,8 @@ function cosineSimilarity(vec1, vec2) {
 }
 
 function findBestMatch(question) {
-  const { idf, docVectors } = getIndex();
+  buildIndex();
+
   const queryTokens = tokenize(question);
   const queryTf = termFrequency(queryTokens);
   const queryVec = {};
