@@ -16,7 +16,17 @@
       "Hola",
       "Buenos días",
       "Buenas tardes",
-      "Buenas noches"
+      "Buenas noches",
+      "¿Cómo te llamas?",
+      "Como te llamas",
+      "Como te llamas?",
+      "como te llamas",
+      "cual es tu nombre",
+      "Cual es tu nombre",
+      "cual es tu profesion",
+      "Cual es tu profesion",
+      "Tu nombre",
+      "tu nombre"
     ],
     "respuesta": "¡Hola! Soy Eduardo Romero, desarrollador backend y especialista en IA con más de 3 años de experiencia transformando necesidades operativas en soluciones automatizadas, trazables y escalables. Mi stack principal incluye Python, FastAPI, Django, Node.js, y en el área de IA trabajo con RAG, agentes conversacionales, LangChain y OpenAI API. ¿En qué puedo ayudarte?"
   },

@@ -13,8 +13,11 @@ try {
 }
 
 function tokenize(text) {
-  return text.toLowerCase()
-    .replace(/[^a-záéíóúñü0-9\s]/g, ' ')
+  return text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
     .filter(t => t.length > 1);
 }
@@ -73,8 +76,22 @@ function cosineSimilarity(vec1, vec2) {
   return denom === 0 ? 0 : dot / denom;
 }
 
+function normalizeText(text) {
+  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[¿?¡!.,;:()]/g, '').trim();
+}
+
 function findBestMatch(question) {
   buildIndex();
+
+  const normalized = normalizeText(question);
+
+  for (const entry of knowledge) {
+    for (const p of entry.preguntas) {
+      if (normalizeText(p) === normalized) {
+        return { bestId: entry.id, bestScore: 1 };
+      }
+    }
+  }
 
   const queryTokens = tokenize(question);
   const queryTf = termFrequency(queryTokens);

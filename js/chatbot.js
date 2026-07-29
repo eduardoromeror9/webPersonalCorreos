@@ -13,9 +13,7 @@
     container.innerHTML = `
       <div class="chatbot-header">
         <div class="chatbot-header-title">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
+          <img src="img/chatBotIcon.png" alt="Chat" style="width:22px;height:22px;border-radius:50%;">
           Eduardo IA
         </div>
         <button id="chatbot-close" class="chatbot-header-close" aria-label="Cerrar chat">
@@ -42,11 +40,7 @@
     btn.id = 'chatbot-btn';
     btn.className = 'chatbot-btn';
     btn.setAttribute('aria-label', 'Abrir chat');
-    btn.innerHTML = `
-      <svg viewBox="0 0 24 24">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-    `;
+    btn.innerHTML = `<img src="img/chatBotIcon.png" alt="Chat" style="width:32px;height:32px;">`;
     return btn;
   }
 
@@ -77,7 +71,7 @@
   function getWelcomeMessage() {
     const saved = sessionStorage.getItem('chatbot_history');
     if (!saved || JSON.parse(saved).length === 0) {
-      return '¡Hola! Soy el asistente virtual de Eduardo. Puedes preguntarme sobre su experiencia, proyectos, habilidades y más. ¿En qué puedo ayudarte?';
+      return '¡Hola! Soy el asistente virtual de Eduardo. Puedes preguntarme sobre mi experiencia, proyectos, habilidades y más. ¿En qué puedo ayudarte?';
     }
     return null;
   }
