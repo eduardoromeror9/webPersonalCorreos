@@ -70,6 +70,10 @@ Netlify despliega automáticamente al detectar el push.
 - **Diseño responsive** — Adaptable a móvil, tablet y escritorio.
 - **SEO básico** — Meta viewport, fuentes con preload, títulos descriptivos y favicon.
 
+## Arquitectura del Chatbot
+
+![Diagrama de flujo de la lógica de respuesta del chatbot](img/arquitectura-Chatbot.svg)
+
 ## Licencia
 
 © 2025 Eduardo Romero - Freelancer Web Dev

@@ -105,14 +105,6 @@
       "¿Has trabajado en el sector financiero?",
       "¿Qué logros tuviste en DXC?",
       "¿Cuánto redujiste errores manuales?",
-      "Control-M",
-      "¿Qué es Control-M?",
-      "CAWA",
-      "¿Qué es CAWA?",
-      "Splunk",
-      "¿Usaste Control-M?",
-      "¿Usaste CAWA?",
-      "¿Usaste Splunk?",
       "Experiencia con Control-M",
       "Experiencia con Splunk"
     ],
@@ -150,7 +142,6 @@
       "¿Usas LangChain?",
       "¿Sabes qué es RAG?",
       "¿Has hecho agentes conversacionales?",
-      "¿Qué es RAG?",
       "¿Qué es LangChain?",
       "¿Qué es prompt engineering?",
       "¿Has usado OpenAI API?",
@@ -389,6 +380,17 @@
     "respuesta": "Aplico IA y automatización en tres áreas clave: 1) Automatización de procesos operativos en entornos 24/7 (reducción de errores manuales y optimización de flujos), 2) Desarrollo de agentes conversacionales para atención al cliente o consulta interna, y 3) Sistemas RAG para extraer información de bases de datos y documentos internos, facilitando la toma de decisiones."
   },
   {
+    "id":"conceptos-basicos-rag",
+    "preguntas": [
+      "¿Qué es RAG?",
+      "¿Qué significa RAG en IA?",
+      "¿Qué es un sistema RAG?",
+      "¿Cómo funciona un sistema RAG?",
+      "¿Qué es Retrieval-Augmented Generation?"
+    ],
+    "respuesta": "RAG (Generación Aumentada por Recuperación) es una técnica de inteligencia artificial que mejora las respuestas de un modelo de lenguaje, permitiéndole buscar información externa y actualizada en el momento justo antes de generar una respuesta, en lugar de depender únicamente de lo que aprendió durante su entrenamiento. En otras palabras: Es el \"permiso\" que le das a la IA para que consulte sus apuntes (una base de datos) antes de hablar, asegurándose de que lo que diga sea cierto y esté al día. En resumen, RAG es la técnica que convierte a una IA de \"sabelotodo que a veces inventa\" en un \"investigador experto que busca, verifica y luego responde\". Analogía: Imagina que tienes que hacer un examen de historia pero tu memoria solo recuerda cosas hasta el año 2010. Sin RAG: Intentas responder solo con lo que recuerdas y fallas o inventas. Con RAG: El profesor te permite tener todos los libros de texto abiertos en tu escritorio. Antes de responder, buscas en el índice, encuentras el párrafo exacto, lo lees y luego escribes tu respuesta con esa información fresca. RAG es ese \"permiso para buscar en los libros\" justo antes de responder."
+  },
+  {
     "id": "ingles",
     "preguntas": [
       "¿Hablas inglés?",
@@ -397,7 +399,7 @@
       "Do you speak English?",
       "What is your English level?"
     ],
-    "respuesta": "No estoy capacitado para responder sobre ese tema."
+    "respuesta": "My English level is intermediate. I can understand technical documentation and communicate in professional contexts, but I'm more comfortable in Spanish. ¿Hablamos en español?"
   },
   {
     "id": "fecha-nacimiento-edad",
@@ -437,7 +439,7 @@
       "¿Cuáles son tus tarifas?",
       "¿Cuánto cuesta una página web?",
       "¿Cuánto cobras por un proyecto?",
-      "¿Precios de desarrollo web"
+      "¿Precios de desarrollo web?"
     ],
     "respuesta": "No estoy capacitado para responder sobre ese tema."
   },
