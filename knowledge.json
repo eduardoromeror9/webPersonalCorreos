@@ -1,15 +1,15 @@
 [
   {
-  "id": "pais", 
-  "preguntas": [
-    "¿De qué país eres?",
-    "¿Cuál es tu nacionalidad?",
-    "¿Dónde naciste?", 
-    "¿Eres chileno?",
-    "¿Eres venezolano?",
-    "De donde eres?"
-   ], 
-   "respuesta": "Soy venezolano, actualmente viviendo en Santiago, Región Metropolitana, Chile."
+    "id": "pais",
+    "preguntas": [
+      "¿De qué país eres?",
+      "¿Cuál es tu nacionalidad?",
+      "¿Dónde naciste?",
+      "¿Eres chileno?",
+      "¿Eres venezolano?",
+      "De donde eres?"
+    ],
+    "respuesta": "Soy venezolano, actualmente viviendo en Santiago, Región Metropolitana, Chile."
   },
   {
     "id": "ciudad-natal",
@@ -320,6 +320,73 @@
       "¿Experiencia con herramientas de monitoreo?"
     ],
     "respuesta": "Sí, tengo experiencia con herramientas de monitoreo y operación en entornos críticos. Usé Splunk para análisis de logs, dashboards y diagnóstico de incidentes. Trabajé con Control-M y CAWA para ejecución y control de mallas batch, verificando secuencias, dependencias y finalización correcta de procesos automatizados en entornos financieros 24/7."
+  },
+  {
+    "id": "proyectos-destacados",
+    "preguntas": [
+      "¿Qué proyectos destacas?",
+      "¿Cuál es tu proyecto más importante?",
+      "¿Qué has construido con IA?",
+      "¿Cuál es tu mejor proyecto?",
+      "¿Qué proyecto te enorgullece más?"
+    ],
+    "respuesta": "Destaco dos proyectos principales: 1) Un sistema RAG híbrido con Python y FastAPI que combina Text-to-SQL y búsqueda semántica para consultar datos privados con control de acceso, y 2) Un agente conversacional con OpenAI API y control de tokens que ofrece respuestas precisas y contextuales. También tengo experiencia automatizando procesos con Python y Selenium en entornos críticos."
+  },
+  {
+    "id": "logros-cuantificables",
+    "preguntas": [
+      "¿Qué logros has tenido?",
+      "¿Cuáles son tus principales logros?",
+      "¿Qué resultados has obtenido?",
+      "¿Has reducido errores en tus proyectos?",
+      "¿Qué impacto has tenido en tu trabajo?"
+    ],
+    "respuesta": "He logrado reducir errores manuales en aproximadamente un 40% mediante scripts de automatización en Python, y he optimizado el rendimiento de aplicaciones web reduciendo errores de sitio en un 45% a través de mejoras en validaciones y lógica de negocio con Django y Node.js. Además, he diseñado sistemas RAG que permiten consultar datos privados de forma segura y eficiente, con grounding y control de acceso."
+  },
+  {
+    "id": "motivacion",
+    "preguntas": [
+      "¿Qué te motiva profesionalmente?",
+      "¿Por qué te dedicas a la tecnología?",
+      "¿Cuál es tu filosofía de trabajo?",
+      "¿Qué te apasiona de la IA?",
+      "¿Por qué trabajas con Python?"
+    ],
+    "respuesta": "Me motiva transformar procesos complejos en soluciones simples y efectivas. Disfruto entender un problema operativo, diseñar una arquitectura técnica y ver cómo la automatización o la IA generan un impacto real en el día a día de las personas y las empresas. Mi filosofía es construir soluciones trazables, escalables y con valor práctico, siempre con un enfoque en la calidad y la mejora continua."
+  },
+  {
+    "id": "proceso-trabajo",
+    "preguntas": [
+      "¿Cómo trabajas en un proyecto?",
+      "¿Cuál es tu metodología de trabajo?",
+      "¿Cómo abordas un nuevo proyecto?",
+      "¿Cómo te organizas?",
+      "¿Usas metodologías ágiles?"
+    ],
+    "respuesta": "Abordo los proyectos con una metodología estructurada: primero, entiendo el problema de negocio y las necesidades del usuario. Luego, diseño una solución técnica que puede incluir backends en Python con FastAPI o Django, integración de APIs, automatización de procesos, o sistemas con IA. Uso Git para control de versiones, Docker para entornos reproducibles, y pruebas para garantizar calidad. Me adapto a equipos ágiles y priorizo la comunicación clara y la documentación."
+  },
+  {
+    "id": "tecnologias-especificas",
+    "preguntas": [
+      "¿Has trabajado con FastAPI?",
+      "¿Sabes usar ChromaDB?",
+      "¿Has usado PostgreSQL?",
+      "¿Conoces PgVector?",
+      "¿Has usado Docker?",
+      "¿Sabes usar Linux?"
+    ],
+    "respuesta": "Sí, he trabajado con FastAPI para construir APIs rápidas y escalables, integrándolas con sistemas RAG y agentes conversacionales. He usado ChromaDB como base de datos vectorial, PostgreSQL con PgVector para búsquedas híbridas, y Docker para contenerizar aplicaciones. Además, tengo experiencia en administración de sistemas Linux para entornos de producción."
+  },
+  {
+    "id": "casos-de-uso",
+    "preguntas": [
+      "¿Para qué sirve un sistema RAG?",
+      "¿Cuándo usarías un agente conversacional?",
+      "¿En qué casos aplicas IA?",
+      "¿Qué problemas resuelves con automatización?",
+      "¿Dónde aplicas tus habilidades?"
+    ],
+    "respuesta": "Aplico IA y automatización en tres áreas clave: 1) Automatización de procesos operativos en entornos 24/7 (reducción de errores manuales y optimización de flujos), 2) Desarrollo de agentes conversacionales para atención al cliente o consulta interna, y 3) Sistemas RAG para extraer información de bases de datos y documentos internos, facilitando la toma de decisiones."
   },
   {
     "id": "ingles",
