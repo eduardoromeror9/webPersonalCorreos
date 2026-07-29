@@ -1,5 +1,6 @@
 [
-  {"id": "pais", 
+  {
+  "id": "pais", 
   "preguntas": [
     "¿De qué país eres?",
     "¿Cuál es tu nacionalidad?",
@@ -15,7 +16,8 @@
     "preguntas": [
       "¿De qué parte de Venezuela eres?",
       "¿Cuál es tu ciudad natal?",
-      "¿Dónde naciste en Venezuela?"
+      "¿Dónde naciste en Venezuela?",
+      "¿En donde naciste?"
     ],
     "respuesta": "Soy de La Guaira, Venezuela."
   },
