@@ -16,15 +16,14 @@ freelanceWeb/
 ├── sobre-mi.html              # Página sobre mí
 ├── css/
 │   ├── normalize.css
-│   ├── styles.css             # Estilos generales, modo oscuro, testimonios
+│   ├── styles.css             # Estilos generales, tema terminal, testimonios
 │   └── chatbot.css            # Estilos del chatbot
 ├── js/
-│   ├── main.js                # Formulario y toggle modo oscuro
+│   ├── main.js                # Formulario, typewriter y animaciones
 │   └── chatbot.js             # Chatbot frontend
 ├── img/
 │   ├── chatbotIcon.png
-│   ├── nerd.png               # Favicon
-│   └── hero.jpg
+│   └── nerd.png               # Favicon
 ├── netlify/
 │   └── functions/
 │       ├── send-email.js      # Serverless: envío de correos (Resend)
@@ -64,7 +63,7 @@ Netlify despliega automáticamente al detectar el push.
 - **Chatbot con IA** — Botón flotante que abre una ventana de chat con matching semántico TF-IDF sobre `knowledge.json`. Responde preguntas sobre experiencia, proyectos, habilidades y más. Historial persistente por sesión e indicador de escritura.
 - **Formulario de contacto** — Validación frontend + envío serverless vía Resend con feedback visual de éxito/error.
 - **Botón flotante de WhatsApp** — Enlace directo en esquina inferior derecha.
-- **Modo oscuro** — Toggle global con persistencia en localStorage y adaptación completa de todos los componentes.
+- **Tema terminal (dark)** — Estética Matrix/hacker con fondo oscuro, cuadrícula pulsante y acento verde neón `#00ff41`, aplicada a toda la web incluido el chatbot.
 - **Sección de testimonios** — Cards con reseñas de clientes en la página principal.
 - **Página Sobre Mí** — Perfil profesional, badges de habilidades, experiencia destacada con cards interactivas y certificaciones con enlaces verificables.
 - **Diseño responsive** — Adaptable a móvil, tablet y escritorio.

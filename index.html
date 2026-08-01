@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Desarrollo Web, Python e IA Aplicada | Eduardo Romero</title>
   <meta name="description" content="Eduardo Romero ofrece desarrollo web, automatización con Python e integración de IA aplicada para empresas y proyectos personales en Chile.">
   <meta name="robots" content="index,follow">
@@ -15,7 +15,7 @@
   <meta property="og:title" content="Desarrollo Web, Python e IA Aplicada | Eduardo Romero">
   <meta property="og:description" content="Automatización, backend e IA aplicada para mejorar procesos y crear soluciones web eficientes.">
   <meta property="og:url" content="https://webeduardor9.netlify.app/">
-  
+
   <link rel="icon" type="image/png" href="img/nerd.png">
   <link rel="preload" href="css/normalize.css" as="style">
   <link rel="stylesheet" href="css/normalize.css">
@@ -26,203 +26,221 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="titulo">Eduardo Romero <span>| Backend & AI Specialist</span></h1>
-  </header>
 
   <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
       <a href="#inicio">Inicio</a>
       <a href="sobre-mi.html">Sobre Mi</a>
+      <a href="#servicios">Servicios</a>
       <a href="#clientes">Clientes</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
 
-  <section id="inicio" class="hero">
-    <div class="contenido-hero">
-      <h2 class="">Backend & AI Solutions<span> Freelancer</span></h2>
+  <div class="container">
 
-      <div class="ubicacion">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="88" height="88"
-          viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC107" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <circle cx="12" cy="11" r="3" />
-          <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-        </svg>
-        <p>Santiago, Chile</p>
+    <!-- ========== 1. HERO ========== -->
+    <header id="inicio">
+      <div class="terminal-line">./init_profile.sh --user=eduardo</div>
+      <h1>
+        <span id="typewriter" data-text="Eduardo Romero"></span><span class="cursor"></span>
+      </h1>
+      <div class="subtitle">
+        Backend Developer & AI Specialist<br>
+        <span>Transformando datos en decisiones precisas</span>
       </div>
-
-      <a class="boton" href="#contacto">Contactar</a>
-    </div>
-
-  </section>
-
-  <main class="contenedor sombra">
-
-    <h2>Mis Servicios</h2>
-
-    <div class="servicios">
-      <section class="servicio">
-        <h3>Diseño Web</h3>
-        <div class="iconos">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="40" height="40"
-            viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
-            <circle cx="7.5" cy="10.5" r=".5" fill="currentColor" />
-            <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
-            <circle cx="16.5" cy="10.5" r=".5" fill="currentColor" />
-          </svg>
-        </div>
-        <p>
-          Sitios web profesionales y optimizados con técnicas de IA para mejorar la experiencia del usuario y la conversión. Desarrollo responsive, SEO técnico y análisis inteligente de comportamiento.
-        </p>
-      </section>
-
-      <section class="servicio">
-        <h3>Backend Inteligente</h3>
-        <div class="iconos">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="40"
-            height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <line x1="4" y1="10" x2="4" y2="16" />
-            <line x1="20" y1="10" x2="20" y2="16" />
-            <path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" />
-            <line x1="8" y1="3" x2="9" y2="5" />
-            <line x1="16" y1="3" x2="15" y2="5" />
-            <line x1="9" y1="18" x2="9" y2="21" />
-            <line x1="15" y1="18" x2="15" y2="21" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-apple" width="40"
-            height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M9 7c-3 0 -4 3 -4 5.5c0 3 2 7.5 4 7.5c1.088 -.046 1.679 -.5 3 -.5c1.312 0 1.5 .5 3 .5s4 -3 4 -5c-.028 -.01 -2.472 -.403 -2.5 -3c-.019 -2.17 2.416 -2.954 2.5 -3c-1.023 -1.492 -2.951 -1.963 -3.5 -2c-1.433 -.111 -2.83 1 -3.5 1c-.68 0 -1.9 -1 -3 -1z" />
-            <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
-          </svg>
-        </div>
-        <p>
-          Construcción de aplicaciones web robustas con Python, Django y FastAPI. Integro agentes de IA y arquitecturas RAG para automatizar procesos críticos, con APIs escalables y seguras listas para producción.
-        </p>
-      </section>
-
-      <section class="servicio">
-        <h3>Automatización con IA</h3>
-        <div class="iconos">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="40"
-            height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <rect x="3" y="5" width="18" height="14" rx="3" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-            <line x1="7" y1="15" x2="7.01" y2="15" />
-            <line x1="11" y1="15" x2="13" y2="15" />
-          </svg>
-        </div>
-        <p>
-          Automatización de procesos empresariales con Python, agentes conversacionales y sistemas RAG. Monitoreo 24/7 con Splunk y Control-M para optimizar operaciones y reducir costos operativos.
-        </p>
-      </section>
-    </div>
-
-    <section id="clientes">
-      <h2>Lo que dicen mis clientes</h2>
-      <div class="testimonios-grid">
-        <div class="testimonio-card">
-          <div class="testimonio-avatar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <p class="testimonio-texto">"Eduardo automatizó procesos que nos tomaban horas. Su capacidad para entender problemas técnicos y entregar soluciones rápidas es excepcional. El proyecto se entregó antes de lo esperado."</p>
-          <p class="testimonio-nombre">Carlos Muñoz</p>
-          <p class="testimonio-empresa">TechStart SpA</p>
-        </div>
-        <div class="testimonio-card">
-          <div class="testimonio-avatar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <p class="testimonio-texto">"Necesitábamos mejorar nuestro sitio web y Eduardo no solo entregó a tiempo, sino que optimizó el rendimiento significativamente. Muy profesional y confiable."</p>
-          <p class="testimonio-nombre">María Fernández</p>
-          <p class="testimonio-empresa">InnovaMarket</p>
-        </div>
-        <div class="testimonio-card">
-          <div class="testimonio-avatar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <p class="testimonio-texto">"Trabajamos juntos en integraciones de sistemas complejas. Su conocimiento en Python y APIs REST hizo la definitiva diferencia en nuestro proyecto."</p>
-          <p class="testimonio-nombre">Andrés Velásquez</p>
-          <p class="testimonio-empresa">DataCore Solutions</p>
-        </div>
+      <div class="cta-buttons">
+        <a href="#servicios" class="btn-primary">Ver Servicios</a>
+        <a href="#contacto" class="btn-primary">Contactar</a>
       </div>
-    </section>
+    </header>
 
-    <section id="contacto">
+    <main>
 
-      <h2>Contacto</h2>
-
-      <form class="formulario" id="contact-form" action="/.netlify/functions/send-email" method="POST">
-        <fieldset>
-          <legend>Contactanos llenando todos los campos</legend>
-          <div class="contenedor-campos">
-            <div class="campo">
-              <label for="nombre">Nombre:</label>
-              <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+      <!-- ========== 2. SERVICIOS ========== -->
+      <section id="servicios">
+        <h2 class="section-title">Mis Servicios</h2>
+        <div class="servicios">
+          <section class="servicio">
+            <div class="iconos">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="40" height="40"
+                viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4.5 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
+                <circle cx="7.5" cy="10.5" r=".5" fill="currentColor" />
+                <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
+                <circle cx="16.5" cy="10.5" r=".5" fill="currentColor" />
+              </svg>
             </div>
+            <h3>Diseño Web</h3>
+            <p>
+              Sitios web profesionales y optimizados con técnicas de IA para mejorar la experiencia del usuario y la conversión. Desarrollo responsive, SEO técnico y análisis inteligente de comportamiento.
+            </p>
+          </section>
 
-            <div class="campo">
-              <label for="telefono">Telefono:</label>
-              <input class="input-text" type="tel" id="telefono" name="telefono" placeholder="Tu telefono">
+          <section class="servicio">
+            <div class="iconos">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="40"
+                height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="4" y1="10" x2="4" y2="16" />
+                <line x1="20" y1="10" x2="20" y2="16" />
+                <path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0" />
+                <line x1="8" y1="3" x2="9" y2="5" />
+                <line x1="16" y1="3" x2="15" y2="5" />
+                <line x1="9" y1="18" x2="9" y2="21" />
+                <line x1="15" y1="18" x2="15" y2="21" />
+              </svg>
             </div>
+            <h3>Backend Inteligente</h3>
+            <p>
+              Construcción de aplicaciones web robustas con Python, Django y FastAPI. Integro agentes de IA y arquitecturas RAG para automatizar procesos críticos, con APIs escalables y seguras listas para producción.
+            </p>
+          </section>
 
-            <div class="campo">
-              <label for="email">Correo:</label>
-              <input class="input-text" type="email" id="email" name="email" placeholder="Tu correo" required>
+          <section class="servicio">
+            <div class="iconos">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="40"
+                height="40" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <rect x="3" y="5" width="18" height="14" rx="3" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <line x1="7" y1="15" x2="7.01" y2="15" />
+                <line x1="11" y1="15" x2="13" y2="15" />
+              </svg>
             </div>
+            <h3>Automatización con IA</h3>
+            <p>
+              Automatización de procesos empresariales con Python, agentes conversacionales y sistemas RAG. Monitoreo 24/7 con Splunk y Control-M para optimizar operaciones y reducir costos operativos.
+            </p>
+          </section>
+        </div>
+      </section>
 
-            <div class="campo">
-              <label for="mensaje">Mensaje:</label>
-              <textarea class="input-text" id="mensaje" name="mensaje" required></textarea>
-            </div>
+      <!-- ========== 4. PROBLEMA VS SOLUCIÓN ========== -->
+      <section id="problem-solution">
+        <h2 class="section-title">De Datos Dispersos a Soluciones Inteligentes</h2>
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title">El Desafío</h3>
+            <p class="card-text">
+              Operaciones 24/7 complejas, datos fragmentados, procesos manuales que consumen tiempo valioso y decisiones lentas basadas en información incompleta.
+            </p>
           </div>
 
-          <div id="form-message" class="form-message"></div>
-          <div class="alinear-derecha flex">
-            <input class="boton w-sm-100" type="submit" id="btn-submit" value="Enviar">
+          <div class="arrow-container">
+            ➜
           </div>
 
-        </fieldset>
-      </form>
+          <div class="comparison-card">
+            <div class="card-icon">🤖</div>
+            <h3 class="card-title">La Solución</h3>
+            <p class="card-text">
+              Automatización con <strong style="color: var(--accent);">IA Generativa</strong>, arquitecturas <strong style="color: var(--accent);">RAG</strong>, agentes conversacionales y monitoreo inteligente con Splunk y Control-M.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    </section>
-  </main>
+      <!-- ========== 5. TESTIMONIOS ========== -->
+      <section id="clientes">
+        <h2 class="section-title">Lo que dicen mis clientes</h2>
+        <div class="testimonios-grid">
+          <div class="testimonio-card">
+            <div class="testimonio-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="testimonio-texto">"Eduardo automatizó procesos que nos tomaban horas. Su capacidad para entender problemas técnicos y entregar soluciones rápidas es excepcional. El proyecto se entregó antes de lo esperado."</p>
+            <p class="testimonio-nombre">Carlos Muñoz</p>
+            <p class="testimonio-empresa">TechStart SpA</p>
+          </div>
+          <div class="testimonio-card">
+            <div class="testimonio-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="testimonio-texto">"Necesitábamos mejorar nuestro sitio web y Eduardo no solo entregó a tiempo, sino que optimizó el rendimiento significativamente. Muy profesional y confiable."</p>
+            <p class="testimonio-nombre">María Fernández</p>
+            <p class="testimonio-empresa">InnovaMarket</p>
+          </div>
+          <div class="testimonio-card">
+            <div class="testimonio-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="testimonio-texto">"Trabajamos juntos en integraciones de sistemas complejas. Su conocimiento en Python y APIs REST hizo la definitiva diferencia en nuestro proyecto."</p>
+            <p class="testimonio-nombre">Andrés Velásquez</p>
+            <p class="testimonio-empresa">DataCore Solutions</p>
+          </div>
+        </div>
+      </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Eduardo Romero Freelancer Web Dev. All rights reserved.</p>
-  </footer>
+      <!-- ========== 6. CONTACTO ========== -->
+      <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+
+        <form class="formulario" id="contact-form" action="/.netlify/functions/send-email" method="POST">
+          <fieldset>
+            <legend>Contáctanos llenando todos los campos</legend>
+            <div class="contenedor-campos">
+              <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+              </div>
+
+              <div class="campo">
+                <label for="telefono">Telefono:</label>
+                <input class="input-text" type="tel" id="telefono" name="telefono" placeholder="Tu telefono">
+              </div>
+
+              <div class="campo">
+                <label for="email">Correo:</label>
+                <input class="input-text" type="email" id="email" name="email" placeholder="Tu correo" required>
+              </div>
+
+              <div class="campo">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="input-text" id="mensaje" name="mensaje" required></textarea>
+              </div>
+            </div>
+
+            <div id="form-message" class="form-message"></div>
+            <div class="alinear-derecha flex">
+              <input class="boton w-sm-100" type="submit" id="btn-submit" value="Enviar">
+            </div>
+
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- ========== CTA FINAL ========== -->
+      <section class="final-cta">
+        <h2>Hablemos de tu próxima automatización</h2>
+        <p>¿Tienes procesos manuales que podrían optimizarse con IA? ¿Necesitas una arquitectura RAG robusta para tu empresa?</p>
+        <a href="https://wa.me/56932902445?text=Hola,%20vi%20tu%20web%20y%20me%20interesan%20tus%20servicios" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Contacto Directo
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Eduardo Romero. Backend &amp; AI Specialist.</p>
+      <p class="footer-note">
+        Transformando datos en decisiones precisas desde 2022.
+      </p>
+    </footer>
+
+  </div>
 
   <a class="whatsapp-btn" href="https://wa.me/56932902445?text=Hola,%20vi%20tu%20web%20y%20me%20interesan%20tus%20servicios" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
-
-  <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"/>
-      <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-  </button>
 
   <script src="js/main.js"></script>
   <script src="js/chatbot.js"></script>
