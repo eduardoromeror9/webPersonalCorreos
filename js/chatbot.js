@@ -13,7 +13,7 @@
     container.innerHTML = `
       <div class="chatbot-header">
         <div class="chatbot-header-title">
-          <img src="img/chatBotIcon.png" alt="Chat" style="width:22px;height:22px;border-radius:50%;">
+          <img src="img/chatBotIcon.png" alt="Chat" style="width:22px;height:22px;border-radius:0.5rem;">
           Eduardo IA
         </div>
         <button id="chatbot-close" class="chatbot-header-close" aria-label="Cerrar chat">
