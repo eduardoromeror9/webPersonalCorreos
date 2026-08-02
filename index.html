@@ -39,7 +39,7 @@
 
   <div class="container">
 
-    <!-- ========== 1. HERO ========== -->
+    <!-- HERO -->
     <header id="inicio">
       <div class="terminal-line">./init_profile.sh --user=eduardo</div>
       <h1>
@@ -57,7 +57,7 @@
 
     <main>
 
-      <!-- ========== 2. SERVICIOS ========== -->
+      <!-- SERVICIOS -->
       <section id="servicios">
         <h2 class="section-title">Mis Servicios</h2>
         <div class="servicios">
@@ -121,7 +121,7 @@
         </div>
       </section>
 
-      <!-- ========== 4. PROBLEMA VS SOLUCIÓN ========== -->
+      <!-- PROBLEMA VS SOLUCIÓN -->
       <section id="problem-solution">
         <h2 class="section-title">De Datos Dispersos a Soluciones Inteligentes</h2>
         <div class="comparison-grid">
@@ -147,7 +147,7 @@
         </div>
       </section>
 
-      <!-- ========== 5. TESTIMONIOS ========== -->
+      <!-- TESTIMONIOS -->
       <section id="clientes">
         <h2 class="section-title">Lo que dicen mis clientes</h2>
         <div class="testimonios-grid">
@@ -178,7 +178,7 @@
         </div>
       </section>
 
-      <!-- ========== 6. CONTACTO ========== -->
+      <!-- CONTACTO -->
       <section id="contacto">
         <h2 class="section-title">Contacto</h2>
 
@@ -201,10 +201,16 @@
                 <input class="input-text" type="email" id="email" name="email" placeholder="Tu correo" required>
               </div>
 
-              <div class="campo">
-                <label for="mensaje">Mensaje:</label>
-                <textarea class="input-text" id="mensaje" name="mensaje" required></textarea>
-              </div>
+            <div class="campo">
+              <label for="mensaje">Mensaje:</label>
+              <textarea class="input-text" id="mensaje" name="mensaje" required></textarea>
+            </div>
+
+            <!-- Campo honeypot anti-bots: oculto para humanos, los bots lo rellenan -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="honeypot">No rellenar este campo</label>
+              <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+            </div>
             </div>
 
             <div id="form-message" class="form-message"></div>
@@ -216,7 +222,7 @@
         </form>
       </section>
 
-      <!-- ========== CTA FINAL ========== -->
+      <!-- CTA FINAL -->
       <section class="final-cta">
         <h2>Hablemos de tu próxima automatización</h2>
         <p>¿Tienes procesos manuales que podrían optimizarse con IA? ¿Necesitas una arquitectura RAG robusta para tu empresa?</p>

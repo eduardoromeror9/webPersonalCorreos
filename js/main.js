@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         email: form.email.value,
         telefono: form.telefono.value,
         mensaje: form.mensaje.value,
+        honeypot: form.honeypot ? form.honeypot.value : "",
       };
 
       try {
