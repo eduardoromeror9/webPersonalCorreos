@@ -203,7 +203,7 @@
 }
 
 .chatbot-input::placeholder {
-  color: #555;
+  color: #999;
 }
 
 .chatbot-send {

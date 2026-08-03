@@ -749,8 +749,8 @@ h1 .accent {
 }
 
 .input-text::placeholder {
-  color: #555;
-  opacity: 0.7;
+  color: #999;
+  opacity: 1;
 }
 
 /* Honeypot anti-bots: invisible para humanos */
@@ -857,7 +857,7 @@ h1 .accent {
 .footer .footer-note {
   margin-top: 0.5rem;
   font-size: 0.8rem;
-  color: #555;
+  color: #999;
 }
 
 /* ========== BOTÓN FLOTANTE WHATSAPP ========== */

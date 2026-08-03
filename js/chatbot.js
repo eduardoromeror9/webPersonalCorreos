@@ -159,19 +159,47 @@
       loadHistory();
     }
 
+    function focusTrap(e) {
+      if (e.key !== 'Tab') return;
+      const focusables = container.querySelectorAll(
+        'button, input, [href], [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openChat() {
+      state.open = true;
+      container.classList.add('open');
+      const input = document.getElementById('chatbot-input');
+      setTimeout(() => input.focus(), 300);
+      document.addEventListener('keydown', focusTrap);
+    }
+
+    function closeChat() {
+      state.open = false;
+      container.classList.remove('open');
+      document.removeEventListener('keydown', focusTrap);
+      btn.focus();
+    }
+
     btn.addEventListener('click', () => {
-      state.open = !state.open;
-      container.classList.toggle('open', state.open);
       if (state.open) {
-        const input = document.getElementById('chatbot-input');
-        setTimeout(() => input.focus(), 300);
+        closeChat();
+      } else {
+        openChat();
       }
     });
 
-    document.getElementById('chatbot-close').addEventListener('click', () => {
-      state.open = false;
-      container.classList.remove('open');
-    });
+    document.getElementById('chatbot-close').addEventListener('click', closeChat);
 
     const input = document.getElementById('chatbot-input');
     const sendBtn = document.getElementById('chatbot-send');
