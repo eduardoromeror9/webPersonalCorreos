@@ -23,16 +23,27 @@ freelanceWeb/
 │   └── chatbot.js             # Chatbot frontend
 ├── img/
 │   ├── chatbotIcon.png
-│   └── nerd.png               # Favicon
+│   ├── nerd.png               # Favicon
+│   └── og-image.png           # Imagen social (1200x630)
 ├── netlify/
 │   └── functions/
 │       ├── send-email.js      # Serverless: envío de correos (Resend)
-│       └── chatbot.js         # Serverless: matching semántico del chatbot
-├── knowledge.json             # Base de conocimiento del chatbot
+│       ├── chatbot.js         # Serverless: matching semántico del chatbot
+│       ├── _shared/
+│       │   ├── http.js        # CORS, rate limiting y helpers HTTP compartidos
+│       │   └── tfidf.js       # Lógica de matching TF-IDF del chatbot
+│       └── _data/
+│           └── knowledge.json # Base de conocimiento del chatbot (no pública)
+├── robots.txt
+├── sitemap.xml
 ├── netlify.toml               # Configuración de Netlify
 ├── package.json
 └── .env.example               # Template de variables de entorno
 ```
+
+> **Privacidad:** `knowledge.json` vive dentro de `netlify/functions/_data/`, por lo
+> que Netlify no lo publica como archivo estático: solo es accesible desde la
+> función serverless. `img/`, `css/`, `js/` y las páginas HTML son lo único público.
 
 ## Variables de entorno
 
@@ -41,6 +52,7 @@ Configurar en **Netlify Dashboard → Site settings → Environment variables**:
 | Variable | Descripción |
 |----------|-------------|
 | `RESEND_API_KEY` | API key de [Resend](https://resend.com) |
+| `RESEND_FROM` | Remitente verificado (ej: `Portfolio Web <hola@tudominio.com>`). Si no se define, usa `onboarding@resend.dev` (dominio de pruebas, puede caer en spam) |
 | `CONTACT_EMAIL` | Correo destino donde se reciben los mensajes |
 
 ## Desarrollo local
@@ -67,7 +79,7 @@ Netlify despliega automáticamente al detectar el push.
 - **Sección de testimonios** — Cards con reseñas de clientes en la página principal.
 - **Página Sobre Mí** — Perfil profesional, badges de habilidades, experiencia destacada con cards interactivas y certificaciones con enlaces verificables.
 - **Diseño responsive** — Adaptable a móvil, tablet y escritorio.
-- **SEO básico** — Meta viewport, fuentes con preload, títulos descriptivos y favicon.
+- **SEO** — Meta tags descriptivos, Open Graph y Twitter Cards con imagen social, JSON-LD (`Person` / `ProfilePage`), `robots.txt`, `sitemap.xml` y favicon.
 
 ## Arquitectura del Chatbot
 

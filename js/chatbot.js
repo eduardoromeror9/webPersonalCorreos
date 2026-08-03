@@ -13,7 +13,7 @@
     container.innerHTML = `
       <div class="chatbot-header">
         <div class="chatbot-header-title">
-          <img src="img/chatBotIcon.png" alt="Chat" style="width:22px;height:22px;border-radius:0.5rem;">
+          <img src="img/chatBotIcon.png" alt="Chat" loading="lazy" style="width:22px;height:22px;border-radius:0.5rem;">
           Eduardo IA
         </div>
         <button id="chatbot-close" class="chatbot-header-close" aria-label="Cerrar chat">
@@ -22,7 +22,7 @@
           </svg>
         </button>
       </div>
-      <div id="chatbot-messages" class="chatbot-messages"></div>
+      <div id="chatbot-messages" class="chatbot-messages" role="log" aria-live="polite"></div>
       <div class="chatbot-input-area">
         <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Escribe tu pregunta..." autocomplete="off">
         <button id="chatbot-send" class="chatbot-send" aria-label="Enviar">
@@ -40,7 +40,7 @@
     btn.id = 'chatbot-btn';
     btn.className = 'chatbot-btn';
     btn.setAttribute('aria-label', 'Abrir chat');
-    btn.innerHTML = `<img src="img/chatBotIcon.png" alt="Chat" style="width:32px;height:32px;">`;
+    btn.innerHTML = `<img src="img/chatBotIcon.png" alt="Chat" loading="lazy" style="width:32px;height:32px;">`;
     return btn;
   }
 

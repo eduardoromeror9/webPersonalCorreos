@@ -3,17 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const typewriter = document.getElementById("typewriter");
   if (typewriter) {
     const text = typewriter.dataset.text || "Eduardo Romero";
-    let index = 0;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-    function typeWriter() {
-      if (index < text.length) {
-        typewriter.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 180);
+    if (prefersReducedMotion) {
+      typewriter.textContent = text;
+    } else {
+      let index = 0;
+
+      function typeWriter() {
+        if (index < text.length) {
+          typewriter.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 180);
+        }
       }
-    }
 
-    typeWriter();
+      typeWriter();
+    }
   }
 
   // --- Scroll suave ---

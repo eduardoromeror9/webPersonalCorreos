@@ -14,6 +14,15 @@
   <meta property="og:title" content="Sobre Mí - Eduardo Romero">
   <meta property="og:description" content="Perfil profesional, habilidades y certificaciones de Eduardo Romero, Backend & AI Specialist.">
   <meta property="og:url" content="https://webeduardor9.netlify.app/sobre-mi.html">
+  <meta property="og:image" content="https://webeduardor9.netlify.app/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Eduardo Romero - Backend Developer & AI Specialist">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sobre Mí - Eduardo Romero">
+  <meta name="twitter:description" content="Perfil profesional, habilidades y certificaciones de Eduardo Romero, Backend & AI Specialist.">
+  <meta name="twitter:image" content="https://webeduardor9.netlify.app/img/og-image.png">
 
   <link rel="icon" type="image/png" href="img/nerd.png">
   <link rel="preload" href="css/normalize.css" as="style">
@@ -22,9 +31,42 @@
   <link rel="preload" href="css/styles.css" as="style">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="css/chatbot.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Eduardo Romero",
+      "jobTitle": "Backend Developer & AI Specialist",
+      "url": "https://webeduardor9.netlify.app/sobre-mi.html",
+      "image": "https://webeduardor9.netlify.app/img/og-image.png",
+      "description": "Desarrollador backend y especialista en IA con más de 3 años de experiencia. Automatización, arquitecturas RAG y agentes conversacionales.",
+      "knowsAbout": [
+        "Python",
+        "Django",
+        "FastAPI",
+        "JavaScript",
+        "Node.js",
+        "APIs REST",
+        "SQL",
+        "Docker",
+        "Linux",
+        "Selenium",
+        "Splunk",
+        "Control-M",
+        "RAG",
+        "LangChain"
+      ]
+    }
+  }
+  </script>
 </head>
 
 <body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <div class="nav-bg">
     <nav class="navegacion-principal contenedor">
@@ -43,7 +85,7 @@
       <h1>Sobre <span class="accent">Mí</span></h1>
     </header>
 
-    <main>
+    <main id="main">
 
       <section id="sobre-mi">
         <div class="sobre-mi-contenido">
@@ -123,7 +165,7 @@
         <div class="certificaciones-grid">
           <div class="certificacion-card">
             <div class="certificacion-badge">
-              <span style="font-size: 2.4rem;">🤖</span>
+              <span role="img" aria-label="Icono de inteligencia artificial" style="font-size: 2.4rem;">🤖</span>
             </div>
             <div class="certificacion-info">
               <h4>Getting Started with Generative AI</h4>
@@ -140,7 +182,7 @@
           </div>
           <div class="certificacion-card">
             <div class="certificacion-badge">
-              <span style="font-size: 2.4rem;">💬</span>
+              <span role="img" aria-label="Icono de chat" style="font-size: 2.4rem;">💬</span>
             </div>
             <div class="certificacion-info">
               <h4>Claude Code 101</h4>

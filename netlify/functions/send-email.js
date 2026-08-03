@@ -1,59 +1,16 @@
 // Función para enviar el formulario de contacto por email
 
 const { Resend } = require("resend");
+const { createRateLimiter, getClientIp, buildHeaders } = require("./_shared/http");
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Orígenes permitidos. El frontend llama a esta función desde el mismo
-// dominio (same-origin), por lo que estos valores solo importan para
-// peticiones cross-origin. Ajustar si se agrega un dominio personalizado.
-const ALLOWED_ORIGINS = new Set([
-  "https://webeduardor9.netlify.app",
-  "http://localhost:8888",
-  "http://localhost:3000",
-]);
 
 // --- Rate limiting simple (en memoria, por instancia) ---
 // Suficiente para disuadir bots y abusos en un sitio estático. Cada
 // instancia mantiene su propio contador; no es distribuido, pero sí
 // efectivo para bloquear ráfagas. Usar el rate limiting nativo de
 // Netlify (config en el objeto `config`) para algo más estricto.
-const WINDOW_MS = 60 * 1000;
-const MAX_REQUESTS = 5;
-const hitMap = new Map(); // ip -> { count, windowStart }
-
-function isRateLimited(ip) {
-  const now = Date.now();
-  const entry = hitMap.get(ip);
-  if (!entry || now - entry.windowStart >= WINDOW_MS) {
-    hitMap.set(ip, { count: 1, windowStart: now });
-    return false;
-  }
-  entry.count += 1;
-  return entry.count > MAX_REQUESTS;
-}
-
-function getClientIp(event) {
-  return (
-    event.headers["x-nf-client-connection-ip"] ||
-    event.headers["x-forwarded-for"]?.split(",")[0]?.trim() ||
-    "unknown"
-  );
-}
-
-// --- CORS ---
-function buildHeaders(event) {
-  const headers = {
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-  };
-  const origin = event.headers.origin;
-  if (origin && ALLOWED_ORIGINS.has(origin)) {
-    headers["Access-Control-Allow-Origin"] = origin;
-    headers["Vary"] = "Origin";
-  }
-  return headers;
-}
+const isRateLimited = createRateLimiter(5);
 
 // --- Sanitización ---
 // Escapa entidades HTML y elimina CR/LF (evita XSS en el correo y
@@ -180,9 +137,10 @@ exports.handler = async (event) => {
   };
 
   const destinatario = process.env.CONTACT_EMAIL;
+  const remitente = process.env.RESEND_FROM || "Portfolio Web <onboarding@resend.dev>";
 
   const { data, error } = await resend.emails.send({
-    from: "Portfolio Web <onboarding@resend.dev>",
+    from: remitente,
     to: destinatario,
     subject: `Nuevo mensaje de contacto: ${limpio.nombre}`,
     html: `
