@@ -1,5 +1,7 @@
 [build]
+  command = "npm run build"
   functions = "netlify/functions"
+  publish = "dist"
 
 # Security headers para todas las páginas y assets estáticos.
 # El CSP permite: scripts locales ('self'), estilos locales e inline
@@ -11,7 +13,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
     Permissions-Policy = "geolocation=(), camera=(), microphone=(), payment=(), usb=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-DMUT1xYenDUerkdlfXwiDkHFmttKiRFAReuvARZcseA=' 'sha256-U9SGCVVoZodZtCdYtc1HT9LuSuVE9vhMNFBIPUR5X7Q='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-DMUT1xYenDUerkdlfXwiDkHFmttKiRFAReuvARZcseA=' 'sha256-U9SGCVVoZodZtCdYtc1HT9LuSuVE9vhMNFBIPUR5X7Q='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
 
 # Caché de assets estáticos (sin hash de contenido, se usa TTL moderado)
 [[headers]]

@@ -11,7 +11,7 @@
   --accent: #00ff41;
   --accent-dim: #008f11;
   --code-bg: #1a1a1a;
-  --font-mono: 'Courier New', Courier, monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
   --font-sans: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --glass-border: 1px solid rgba(0, 255, 65, 0.15);
   --shadow-glass: 0 8px 32px 0 rgba(0, 255, 65, 0.1);
@@ -1022,7 +1022,7 @@ h1 .accent {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: #25D366;
+  background-color: #128C7E;
   border: 2px solid rgba(0, 255, 65, 0.4);
   width: 6rem;
   height: 6rem;
@@ -1054,6 +1054,46 @@ h1 .accent {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  /* Rendimiento móvil: fondos estáticos (sin repintado continuo) */
+  body::before,
+  body::after {
+    animation: none;
+  }
+
+  body::after {
+    transform: none;
+  }
+
+  /* Rendimiento móvil: blur reducido/desactivado en elementos sobre fondo oscuro */
+  .nav-bg {
+    backdrop-filter: blur(4px);
+  }
+
+  .servicio,
+  .comparison-card,
+  .testimonio-card,
+  .experiencia-card,
+  .certificacion-card,
+  .formulario,
+  .final-cta,
+  .modal-overlay {
+    backdrop-filter: none;
+  }
+
+  /* Compactar espaciado vertical en móvil (sin hueco muerto) */
+  body {
+    padding-top: 4rem;
+  }
+
+  header {
+    min-height: auto;
+    padding: 2.5rem 0;
+  }
+
+  .page-header {
+    padding: 2.5rem 0 1rem;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
@@ -1152,6 +1192,27 @@ h1 .accent {
   .whatsapp-btn svg {
     width: 26px;
     height: 26px;
+  }
+}
+
+/* Tablet (769–1024px): grids de 2 columnas y tipografía intermedia */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .servicios,
+  .testimonios-grid,
+  .experiencia-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .final-cta h2 {
+    font-size: 2.2rem;
   }
 }
 

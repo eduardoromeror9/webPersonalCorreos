@@ -80,6 +80,9 @@
 }
 
 .chatbot-header-title img {
+  width: 22px;
+  height: 22px;
+  border-radius: 0.5rem;
   border: 1px solid var(--accent-dim);
 }
 

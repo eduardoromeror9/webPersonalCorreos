@@ -44,8 +44,19 @@ exports.handler = async (event) => {
     };
   }
 
+  let body;
   try {
-    const { question } = JSON.parse(event.body);
+    body = JSON.parse(event.body || '{}');
+  } catch {
+    return {
+      statusCode: 400,
+      headers,
+      body: JSON.stringify({ error: 'JSON inválido' }),
+    };
+  }
+
+  try {
+    const { question } = body;
 
     if (!question || typeof question !== 'string' || question.trim().length === 0) {
       return {

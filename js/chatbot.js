@@ -9,6 +9,25 @@
     waiting: false,
   };
 
+  // Netlify Image CDN: sirve AVIF/WebP con fallback al PNG original.
+  // Requiere activar "Netlify Image CDN" en el dashboard de Netlify;
+  // si está desactivado, las URLs con query params devuelven el PNG.
+  const CHAT_ICON = {
+    fallback: 'img/chatBotIcon.png',
+    webp: 'img/chatBotIcon.png?format=webp',
+    avif: 'img/chatBotIcon.png?format=avif',
+  };
+
+  function iconPicture() {
+    return (
+      '<picture>' +
+      `<source srcset="${CHAT_ICON.avif}" type="image/avif">` +
+      `<source srcset="${CHAT_ICON.webp}" type="image/webp">` +
+      `<img src="${CHAT_ICON.fallback}" alt="" loading="lazy">` +
+      '</picture>'
+    );
+  }
+
   function createChatHTML() {
     const container = document.createElement('div');
     container.id = 'chatbot-container';
@@ -16,7 +35,7 @@
     container.innerHTML = `
       <div class="chatbot-header">
         <div class="chatbot-header-title">
-          <img src="img/chatBotIcon.png" alt="Chat" loading="lazy" style="width:22px;height:22px;border-radius:0.5rem;">
+          ${iconPicture()}
           Eduardo IA
         </div>
         <button id="chatbot-close" class="chatbot-header-close" aria-label="Cerrar chat">
@@ -43,7 +62,9 @@
     btn.id = 'chatbot-btn';
     btn.className = 'chatbot-btn';
     btn.setAttribute('aria-label', 'Abrir chat');
-    btn.innerHTML = `<img src="img/chatBotIcon.png" alt="Chat" loading="lazy" style="width:32px;height:32px;">`;
+    btn.setAttribute('aria-controls', 'chatbot-container');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = iconPicture();
     return btn;
   }
 
@@ -123,16 +144,19 @@
     input.value = '';
     showTyping();
 
+    // Timeout: si la función tarda más de 15s, aborta y habilita el chat de nuevo.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+
     try {
       const res = await fetch(CHAT_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: text }),
+        signal: controller.signal,
       });
 
       const data = await res.json();
-
-      hideTyping();
 
       if (res.ok && data.answer) {
         addMessage(data.answer, 'bot');
@@ -140,15 +164,20 @@
         addMessage('Lo siento, ocurrió un error. Intenta de nuevo.', 'bot error');
       }
     } catch (err) {
+      if (err.name === 'AbortError') {
+        addMessage('El servicio tardó demasiado. Intenta de nuevo.', 'bot error');
+      } else {
+        addMessage('Error de conexión. Verifica tu internet.', 'bot error');
+      }
+    } finally {
+      clearTimeout(timer);
       hideTyping();
-      addMessage('Error de conexión. Verifica tu internet.', 'bot error');
+      state.waiting = false;
+      input.disabled = false;
+      sendBtn.disabled = false;
+      input.focus();
+      saveHistory();
     }
-
-    state.waiting = false;
-    input.disabled = false;
-    sendBtn.disabled = false;
-    input.focus();
-    saveHistory();
   }
 
   function init() {
@@ -181,6 +210,7 @@
     function openChat() {
       state.open = true;
       container.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
       const input = document.getElementById('chatbot-input');
       setTimeout(() => input.focus(), 300);
       document.addEventListener('keydown', focusTrap);
@@ -189,6 +219,7 @@
     function closeChat() {
       state.open = false;
       container.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
       document.removeEventListener('keydown', focusTrap);
       btn.focus();
     }
