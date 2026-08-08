@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada (404) | Eduardo Romero</title>
+  <meta name="description" content="La página que buscas no existe o fue movida. Vuelve al inicio y descubre desarrollo web, Python e IA aplicada.">
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="icon" type="image/png" href="/img/nerd.png">
+  <link rel="preload" href="/css/normalize.css" as="style">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Krub:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <div class="nav-bg">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+    <nav class="navegacion-principal contenedor" id="navegacion">
+      <a href="/">Inicio</a>
+      <a href="/sobre-mi.html">Sobre Mi</a>
+      <a href="/#servicios">Servicios</a>
+      <a href="/#clientes">Clientes</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <header class="page-header">
+      <div class="terminal-line">./error.sh --codigo=404</div>
+    </header>
+
+    <main id="main">
+      <section class="error-404" aria-labelledby="error-titulo">
+        <h1 class="error-code" id="error-titulo">404</h1>
+        <p class="error-subtitle">$ error: archivo no encontrado</p>
+        <p class="error-text">
+          La página que buscas no existe, fue movida o el enlace que seguiste es incorrecto.
+          No te preocupes: esto pasa incluso en los mejores sistemas.
+        </p>
+
+        <div class="error-terminal" role="presentation">
+          <p><span class="prompt">eduardo@web:~$</span> <span class="cmd">find / -name "pagina_buscada"</span></p>
+          <p class="out">find: 'pagina_buscada': No such file or directory</p>
+          <p><span class="prompt">eduardo@web:~$</span> <span class="cmd">cd / &amp;&amp; ls</span></p>
+          <p class="out">index.html&nbsp;&nbsp;sobre-mi.html</p>
+          <p><span class="prompt">eduardo@web:~$</span> <span class="cmd">echo "mejor volver al inicio"</span></p>
+          <p class="out">mejor volver al inicio</p>
+        </div>
+
+        <div class="cta-buttons error-actions">
+          <a href="/" class="btn-primary">Volver al Inicio</a>
+          <a href="/sobre-mi.html" class="btn-primary">Sobre Mí</a>
+          <a href="/#contacto" class="btn-primary">Contacto</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Eduardo Romero. Backend &amp; AI Specialist.</p>
+      <p class="footer-note">
+        Transformando datos en decisiones precisas desde 2022.
+      </p>
+    </footer>
+
+  </div>
+
+  <a class="whatsapp-btn" href="https://wa.me/56932902445?text=Hola,%20encontr%C3%A9%20un%20error%20404%20en%20tu%20web%20y%20me%20interesan%20tus%20servicios" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

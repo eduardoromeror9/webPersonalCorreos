@@ -24,11 +24,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // --- Menú hamburguesa (móvil) ---
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu = document.getElementById("navegacion");
+
+  function closeNavMenu() {
+    if (!navToggle || !navMenu) return;
+    navMenu.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menú");
+  }
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeNavMenu);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("open") && !e.target.closest(".nav-bg")) {
+        closeNavMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNavMenu();
+    });
+  }
+
   // --- Scroll suave ---
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const href = this.getAttribute("href");
+
+      // El contacto ya no es una sección: abre el modal
+      if (href === "#contacto") {
+        openModal();
+        return;
+      }
+
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
@@ -87,6 +128,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Modal de contacto ---
+  const modal = document.getElementById("contacto");
+  const modalClose = document.getElementById("modal-close");
+
+  let lastFocused = null;
+
+  function openModal() {
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden"; // bloquea el scroll de fondo
+    const firstField = modal.querySelector("input, textarea, button");
+    if (firstField) firstField.focus();
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+    if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+    if (window.location.hash === "#contacto") {
+      try {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      } catch (e) { /* noop */ }
+    }
+  }
+
+  if (modal) {
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+    });
+  }
+
   // --- Menú activo con Intersection Observer ---
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".navegacion-principal a");
@@ -129,4 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.transition = "all 0.6s ease-out";
       observer.observe(el);
     });
+
+  // Abrir el modal si se llegó con el hash #contacto (desde sobre-mi.html, 404, etc.)
+  if (window.location.hash === "#contacto") {
+    openModal();
+  }
 });

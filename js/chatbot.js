@@ -1,6 +1,9 @@
 (function () {
   const CHAT_URL = '/.netlify/functions/chatbot';
 
+  const WELCOME_MESSAGE =
+    '¡Hola! Soy el asistente virtual de Eduardo. Puedes preguntarme sobre mi experiencia, proyectos, habilidades y más. ¿En qué puedo ayudarte?';
+
   const state = {
     open: false,
     waiting: false,
@@ -68,25 +71,31 @@
     if (el) el.remove();
   }
 
-  function getWelcomeMessage() {
-    const saved = sessionStorage.getItem('chatbot_history');
-    if (!saved || JSON.parse(saved).length === 0) {
-      return '¡Hola! Soy el asistente virtual de Eduardo. Puedes preguntarme sobre mi experiencia, proyectos, habilidades y más. ¿En qué puedo ayudarte?';
-    }
-    return null;
-  }
-
   function loadHistory() {
     const saved = sessionStorage.getItem('chatbot_history');
-    if (!saved) return;
-    try {
-      const messages = JSON.parse(saved);
-      const container = document.getElementById('chatbot-messages');
-      container.innerHTML = '';
-      messages.forEach(m => addMessage(m.text, m.type));
-    } catch (e) {
-      sessionStorage.removeItem('chatbot_history');
+    let messages = [];
+
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (!Array.isArray(parsed)) throw new Error('formato inválido');
+        messages = parsed;
+      } catch (e) {
+        // Historial corrupto: se limpia y se arranca de cero.
+        sessionStorage.removeItem('chatbot_history');
+      }
     }
+
+    const container = document.getElementById('chatbot-messages');
+
+    if (messages.length === 0) {
+      addMessage(WELCOME_MESSAGE, 'bot');
+      saveHistory();
+      return;
+    }
+
+    container.innerHTML = '';
+    messages.forEach((m) => addMessage(m.text, m.type));
   }
 
   function saveHistory() {
@@ -150,14 +159,7 @@
     document.body.appendChild(btn);
     document.body.appendChild(container);
 
-    const messages = document.getElementById('chatbot-messages');
-    const welcome = getWelcomeMessage();
-    if (welcome) {
-      addMessage(welcome, 'bot');
-      saveHistory();
-    } else {
-      loadHistory();
-    }
+    loadHistory();
 
     function focusTrap(e) {
       if (e.key !== 'Tab') return;

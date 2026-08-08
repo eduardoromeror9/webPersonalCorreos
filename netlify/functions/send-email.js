@@ -31,6 +31,13 @@ function sanitize(str) {
   return str.replace(/\r\n?/g, "\n").trim();
 }
 
+// Para cabeceras de email (subject, reply-to): los saltos de línea pueden
+// interpretarse como cabeceras adicionales (email header injection), así que
+// se eliminan por completo. El resultado se usa como texto plano, sin escapar.
+function sanitizeHeader(str) {
+  return sanitize(str).replace(/[\r\n]+/g, " ");
+}
+
 const LIMITS = {
   nombre: 100,
   email: 100,
@@ -142,7 +149,10 @@ exports.handler = async (event) => {
   const { data, error } = await resend.emails.send({
     from: remitente,
     to: destinatario,
-    subject: `Nuevo mensaje de contacto: ${limpio.nombre}`,
+    // La respuesta del visitante va directo a su correo, no al remitente.
+    replyTo: sanitizeHeader(email),
+    // Subject en texto plano y sin saltos de línea (previene header injection).
+    subject: `Nuevo mensaje de contacto: ${sanitizeHeader(nombre)}`,
     html: `
       <h2>Nuevo mensaje desde tu portfolio web</h2>
       <p><strong>Nombre:</strong> ${limpio.nombre}</p>

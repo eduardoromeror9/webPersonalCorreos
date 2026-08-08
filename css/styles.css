@@ -108,6 +108,38 @@ section {
   flex-wrap: nowrap;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1.2rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle-line {
+  display: block;
+  width: 2.4rem;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .navegacion-principal a {
   display: block;
   color: var(--text-muted);
@@ -132,7 +164,7 @@ section {
 
 /* ========== HERO ========== */
 header {
-  min-height: calc(100vh - 5.6rem);
+  min-height: calc(65vh - 5.6rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -260,7 +292,7 @@ h1 .accent {
   font-family: var(--font-mono);
   font-size: 2rem;
   color: var(--accent);
-  margin: 4rem 0 2rem 0;
+  margin: 2.5rem 0 1.5rem 0;
   border-left: 4px solid var(--accent);
   padding-left: 1rem;
   text-align: left;
@@ -271,7 +303,7 @@ h1 .accent {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -336,7 +368,7 @@ h1 .accent {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 .comparison-card {
@@ -630,22 +662,6 @@ h1 .accent {
   color: var(--accent);
 }
 
-#sobre-mi h3,
-.certificaciones h3 {
-  font-family: var(--font-mono);
-  font-size: 1.8rem;
-  color: var(--accent);
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--accent);
-  padding-left: 1rem;
-  text-align: left;
-}
-
-.certificaciones h3 {
-  margin-top: 4rem;
-}
-
 .habilidades {
   display: flex;
   flex-wrap: wrap;
@@ -676,7 +692,7 @@ h1 .accent {
   backdrop-filter: blur(4px);
   border: var(--glass-border);
   border-radius: 8px;
-  padding: 2.5rem;
+  padding: 1.5rem;
   width: min(64rem, 100%);
   margin: 0 auto;
   box-shadow: var(--shadow-glass);
@@ -691,9 +707,9 @@ h1 .accent {
 .formulario legend {
   text-align: center;
   font-family: var(--font-mono);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--accent);
   width: 100%;
 }
@@ -713,31 +729,31 @@ h1 .accent {
 }
 
 .campo {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .campo label {
   color: var(--text-main);
   font-weight: 600;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
   display: block;
   text-align: left;
 }
 
 .campo textarea {
-  min-height: 16rem;
+  min-height: 8rem;
   resize: vertical;
 }
 
 .input-text {
   width: 100%;
-  padding: 1.2rem 1.5rem;
+  padding: 0.9rem 1.2rem;
   background-color: var(--code-bg);
   border: 1px solid rgba(0, 255, 65, 0.25);
   border-radius: 8px;
   color: var(--text-main);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: var(--font-mono);
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -810,6 +826,69 @@ h1 .accent {
   border: 1px solid #5c1d1d;
 }
 
+/* ========== MODAL DE CONTACTO ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  width: min(52rem, 100%);
+  background: var(--code-bg);
+  border: var(--glass-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-glass);
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal .section-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--accent-dim);
+  border-radius: 0.5rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px var(--accent-dim);
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* ========== CTA FINAL ========== */
 .final-cta {
   padding: 4rem;
@@ -818,7 +897,7 @@ h1 .accent {
   backdrop-filter: blur(4px);
   border: var(--glass-border);
   border-radius: 8px;
-  margin: 4rem auto;
+  margin: 3rem auto;
   max-width: 800px;
   box-shadow: var(--shadow-glass);
 }
@@ -858,6 +937,84 @@ h1 .accent {
   margin-top: 0.5rem;
   font-size: 0.8rem;
   color: #999;
+}
+
+/* ========== PÁGINA 404 ========== */
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 60vh;
+  padding: 2rem 0 4rem;
+}
+
+.error-code {
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--accent);
+  text-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+  margin-bottom: 1rem;
+}
+
+.error-subtitle {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.error-terminal {
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
+  background: var(--code-bg);
+  border: var(--glass-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-glass);
+}
+
+.error-terminal p {
+  margin: 0.4rem 0;
+}
+
+.error-terminal .prompt {
+  color: var(--accent);
+}
+
+.error-terminal .cmd {
+  color: var(--white);
+}
+
+.error-terminal .out {
+  color: var(--text-muted);
+}
+
+.error-actions {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 5rem;
+  }
+
+  .error-terminal {
+    font-size: 0.85rem;
+    padding: 1.2rem;
+  }
 }
 
 /* ========== BOTÓN FLOTANTE WHATSAPP ========== */
@@ -901,18 +1058,44 @@ h1 .accent {
     font-size: 2.5rem;
   }
 
+  .nav-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
   .navegacion-principal {
-    justify-content: flex-start;
-    overflow-x: auto;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 1rem;
+  }
+
+  .navegacion-principal.open {
+    display: flex;
   }
 
   .navegacion-principal a {
+    width: 100%;
     font-size: 1.2rem;
     padding: 1.2rem 1rem;
   }
 
+  .navegacion-principal a::before {
+    display: none;
+  }
+
   .comparison-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sobre-mi-texto {
+    font-size: 1.6rem;
+    text-align: left;
   }
 
   .arrow-container {
@@ -926,6 +1109,14 @@ h1 .accent {
 
   .final-cta h2 {
     font-size: 2rem;
+  }
+
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
   }
 
   .contenedor,
@@ -948,7 +1139,7 @@ h1 .accent {
   }
 
   .campo textarea {
-    min-height: 15rem;
+    min-height: 10rem;
   }
 
   .whatsapp-btn {
@@ -961,6 +1152,21 @@ h1 .accent {
   .whatsapp-btn svg {
     width: 26px;
     height: 26px;
+  }
+}
+
+/* Pantallas muy pequeñas (≤400px) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .terminal-line {
+    font-size: 1rem;
   }
 }
 
